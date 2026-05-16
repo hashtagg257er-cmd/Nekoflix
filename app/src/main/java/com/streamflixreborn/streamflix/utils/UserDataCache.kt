@@ -388,6 +388,7 @@ object UserDataCache {
         val seasonNumber: Int? = null,
         val seasonTitle: String? = null,
         val seasonPoster: String? = null,
+        val seasonBanner: String? = null,
     )
 
 
@@ -461,6 +462,7 @@ object UserDataCache {
                 number = this@toEpisode.seasonNumber ?: 0,
                 title = this@toEpisode.seasonTitle.orEmpty(),
                 poster = this@toEpisode.seasonPoster,
+                banner = this@toEpisode.seasonBanner,
             )
         }
     }
@@ -517,5 +519,6 @@ object UserDataCache {
         seasonNumber = season?.number,
         seasonTitle = season?.title,
         seasonPoster = season?.poster,
+        seasonBanner = season?.banner,
     )
 }

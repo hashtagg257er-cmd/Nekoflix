@@ -119,6 +119,7 @@ object HomeCacheStore {
         val seasonNumber: Int? = null,
         val seasonTitle: String? = null,
         val seasonPoster: String? = null,
+        val seasonBanner: String? = null,
         val lastPlaybackPositionMillis: Long? = null,
         val durationMillis: Long? = null,
         val lastEngagementTimeUtcMillis: Long? = null,
@@ -187,6 +188,7 @@ object HomeCacheStore {
                             number = seasonNumber ?: 0,
                             title = seasonTitle.orEmpty(),
                             poster = seasonPoster,
+                            banner = seasonBanner,
                         )
                     }
                 ).apply {
@@ -247,6 +249,7 @@ object HomeCacheStore {
                         seasonNumber = item.season?.number,
                         seasonTitle = item.season?.title,
                         seasonPoster = item.season?.poster,
+                        seasonBanner = item.season?.banner,
                         lastPlaybackPositionMillis = item.watchHistory?.lastPlaybackPositionMillis,
                         durationMillis = item.watchHistory?.durationMillis,
                         lastEngagementTimeUtcMillis = item.watchHistory?.lastEngagementTimeUtcMillis,
