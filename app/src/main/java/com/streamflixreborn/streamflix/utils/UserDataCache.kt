@@ -453,7 +453,7 @@ object UserDataCache {
                 id = it,
                 title = this@toEpisode.tvShowTitle.orEmpty(),
                 poster = this@toEpisode.tvShowPoster,
-                banner = this@toEpisode.tvShowBanner,
+                banner = this@toEpisode.tvShowBanner ?: "",
             )
         }
         season = this@toEpisode.seasonId?.let {

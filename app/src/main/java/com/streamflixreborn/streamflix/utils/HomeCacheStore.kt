@@ -179,7 +179,7 @@ object HomeCacheStore {
                             id = it,
                             title = tvShowTitle.orEmpty(),
                             poster = tvShowPoster,
-                            banner = tvShowBanner,
+                            banner = tvShowBanner ?: "",
                         )
                     },
                     season = seasonId?.let {
