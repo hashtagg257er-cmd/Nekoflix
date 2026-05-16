@@ -21,6 +21,7 @@ import com.streamflixreborn.streamflix.databinding.FragmentHomeTvBinding
 import com.streamflixreborn.streamflix.models.Category
 import com.streamflixreborn.streamflix.models.Episode
 import com.streamflixreborn.streamflix.models.Movie
+import com.streamflixreborn.streamflix.models.Season
 import com.streamflixreborn.streamflix.models.TvShow
 import com.streamflixreborn.streamflix.utils.viewModelsFactory
 import kotlinx.coroutines.Runnable
@@ -202,6 +203,8 @@ class HomeTvFragment : Fragment() {
                 val poster = when (firstItem) {
                     is Movie -> firstItem.banner
                     is TvShow -> firstItem.banner
+                    is Episode -> firstItem.banner
+                    is Season -> firstItem.banner
                     else -> null
                 }
                 // Force background update without waiting for focus
@@ -274,6 +277,8 @@ class HomeTvFragment : Fragment() {
                         val poster = when (currentItem) {
                             is Movie -> currentItem.banner
                             is TvShow -> currentItem.banner
+                            is Episode -> currentItem.banner
+                            is Season -> currentItem.banner
                             else -> null
                         }
                         // Update background if it's not null
@@ -306,6 +311,8 @@ class HomeTvFragment : Fragment() {
         val poster = when (currentItem) {
             is Movie -> currentItem.banner
             is TvShow -> currentItem.banner
+            is Episode -> currentItem.banner
+            is Season -> currentItem.banner
             else -> null
         }
 
