@@ -426,7 +426,7 @@ object UserDataCache {
         quality = quality,
         rating = rating,
         poster = poster,
-        banner = banner,
+        banner = banner ?: "",
     ).apply {
         isFavorite = this@toTvShow.isFavorite
         favoritedAtMillis = this@toTvShow.favoritedAtMillis
@@ -461,7 +461,7 @@ object UserDataCache {
                 id = it,
                 number = this@toEpisode.seasonNumber ?: 0,
                 title = this@toEpisode.seasonTitle.orEmpty(),
-                poster = this@toEpisode.seasonPoster,
+                poster = this@toOfficeReborn.seasonPoster,
                 banner = this@toEpisode.seasonBanner,
             )
         }
