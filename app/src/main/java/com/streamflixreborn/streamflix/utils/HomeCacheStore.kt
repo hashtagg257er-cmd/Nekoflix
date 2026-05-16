@@ -244,7 +244,7 @@ object HomeCacheStore {
                         tvShowId = item.tvShow?.id,
                         tvShowTitle = item.tvShow?.title,
                         tvShowPoster = item.tvShow?.poster,
-                        tvShowBanner = item.season?.banner,
+                        tvShowBanner = item.tvShow?.banner ?: item.season?.banner,
                         seasonId = item.season?.id,
                         seasonNumber = item.season?.number,
                         seasonTitle = item.season?.title,
