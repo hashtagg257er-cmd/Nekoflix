@@ -22,6 +22,7 @@ import com.streamflixreborn.streamflix.database.AppDatabase
 import com.streamflixreborn.streamflix.databinding.ActivityMainTvBinding
 import com.streamflixreborn.streamflix.databinding.ContentHeaderMenuMainTvBinding
 import com.streamflixreborn.streamflix.fragments.player.PlayerTvFragment
+import com.streamflixreborn.streamflix.models.Profile
 import com.streamflixreborn.streamflix.ui.UpdateAppTvDialog
 import com.streamflixreborn.streamflix.providers.Provider
 import com.streamflixreborn.streamflix.providers.Cine24hProvider
@@ -39,6 +40,7 @@ class MainTvActivity : FragmentActivity() {
     private val viewModel by viewModels<MainViewModel>()
 
     private lateinit var updateAppDialog: UpdateAppTvDialog
+    private var selectedProfile: Profile? = null
 
     override fun attachBaseContext(newBase: android.content.Context) {
         super.attachBaseContext(AppLanguageManager.wrap(newBase))
@@ -49,6 +51,8 @@ class MainTvActivity : FragmentActivity() {
         setTheme(ThemeManager.tvThemeRes(UserPreferences.selectedTheme))
         
         super.onCreate(savedInstanceState)
+
+        selectedProfile = intent.getParcelableExtra("selected_profile")
         
         // Inizializza il provider con il context dell'attività per gestire eventuali bypass visibili
         Cine24hProvider.init(this)

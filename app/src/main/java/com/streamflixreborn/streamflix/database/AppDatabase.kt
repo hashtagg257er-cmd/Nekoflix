@@ -44,6 +44,8 @@ abstract class AppDatabase : RoomDatabase() {
         private var INSTANCE: AppDatabase? = null
         @Volatile
         private var currentProviderName: String? = null
+        @Volatile
+        private var currentProfileId: String? = null
 
         private fun sanitizeProviderName(name: String): String {
             // Rimuove caratteri non validi per i nomi dei file DB, 
@@ -56,6 +58,7 @@ abstract class AppDatabase : RoomDatabase() {
 
         fun setup(context: Context) {
             if (UserPreferences.currentProvider == null) return
+            if (UserPreferences.currentProfile == null) return
 
             getInstance(context)
         }
@@ -65,12 +68,17 @@ abstract class AppDatabase : RoomDatabase() {
                 ?: currentProviderName
                 ?: throw IllegalStateException("Current provider is not set")
 
-            return INSTANCE?.takeIf { currentProviderName == providerName } ?: synchronized(this) {
-                INSTANCE?.takeIf { currentProviderName == providerName } ?: run {
+            val profileId = UserPreferences.currentProfile?.id
+                ?: currentProfileId
+                ?: throw IllegalStateException("Current profile is not set")
+
+            return INSTANCE?.takeIf { currentProviderName == providerName && currentProfileId == profileId } ?: synchronized(this) {
+                INSTANCE?.takeIf { currentProviderName == providerName && currentProfileId == profileId } ?: run {
                     INSTANCE?.close()
-                    buildDatabase(providerName, context).also { instance ->
+                    buildDatabase(providerName, profileId, context).also { instance ->
                         INSTANCE = instance
                         currentProviderName = providerName
+                        currentProfileId = profileId
                     }
                 }
             }
@@ -82,19 +90,23 @@ abstract class AppDatabase : RoomDatabase() {
                 INSTANCE?.close()
                 INSTANCE = null
                 currentProviderName = null
+                currentProfileId = null
             }
         }
 
         fun getInstanceForProvider(providerName: String, context: Context): AppDatabase {
-            return buildDatabase(providerName, context)
+            val profileId = UserPreferences.currentProfile?.id
+                ?: throw IllegalStateException("Current profile is not set")
+            return buildDatabase(providerName, profileId, context)
         }
 
-        private fun buildDatabase(providerName: String, context: Context): AppDatabase {
+        private fun buildDatabase(providerName: String, profileId: String, context: Context): AppDatabase {
             val sanitizedName = sanitizeProviderName(providerName)
+            val dbName = "${sanitizedName}_$profileId.db"
             return Room.databaseBuilder(
                 context = context.applicationContext,
                 klass = AppDatabase::class.java,
-                name = "$sanitizedName.db"
+                name = dbName
             )
                 .allowMainThreadQueries()
                 .addMigrations(MIGRATION_1_2)

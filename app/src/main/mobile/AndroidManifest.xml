@@ -39,10 +39,8 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".activities.main.MainMobileActivity"
-            android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize"
+            android:name=".ui.profile.ProfileSelectionActivity"
             android:exported="true"
-            android:supportsPictureInPicture="true"
             android:theme="@style/AppTheme.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,6 +49,14 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.main.MainMobileActivity"
+            android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/AppTheme.Mobile">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>

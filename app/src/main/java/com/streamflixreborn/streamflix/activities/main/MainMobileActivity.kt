@@ -29,6 +29,7 @@ import com.streamflixreborn.streamflix.R
 import com.streamflixreborn.streamflix.activities.tools.BypassWebViewActivity
 import com.streamflixreborn.streamflix.databinding.ActivityMainMobileBinding
 import com.streamflixreborn.streamflix.fragments.player.PlayerMobileFragment
+import com.streamflixreborn.streamflix.models.Profile
 import com.streamflixreborn.streamflix.providers.Cine24hProvider
 import com.streamflixreborn.streamflix.providers.Provider
 import com.streamflixreborn.streamflix.ui.UpdateAppMobileDialog
@@ -89,6 +90,7 @@ class MainMobileActivity : FragmentActivity() {
     private var pendingToken: String? = null
 
     private var updateAppDialog: UpdateAppMobileDialog? = null
+    private var selectedProfile: Profile? = null
 
     override fun attachBaseContext(newBase: android.content.Context) {
         super.attachBaseContext(AppLanguageManager.wrap(newBase))
@@ -98,6 +100,8 @@ class MainMobileActivity : FragmentActivity() {
         setTheme(ThemeManager.mobileThemeRes(UserPreferences.selectedTheme))
 
         super.onCreate(savedInstanceState)
+
+        selectedProfile = intent.getParcelableExtra("selected_profile")
 
         Cine24hProvider.init(this)
 

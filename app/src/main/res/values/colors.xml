@@ -1,14 +1,25 @@
 <resources>
-    <color name="white">#FFFFFF</color>
+    <!-- Netflix Inspired Color Palette -->
     <color name="black">#000000</color>
-    <color name="ic_launcher_background">#1E2129</color>
-    <color name="ic_banner_background">#1E2129</color>
+    <color name="white">#FFFFFF</color>
 
-    <!-- Colore di sfondo dinamico per TV -->
-    <color name="app_background">#181818</color>
+    <!-- Backgrounds -->
+    <color name="app_background">#141414</color>
+    <color name="ic_launcher_background">#141414</color>
+    <color name="ic_banner_background">#141414</color>
 
+    <!-- Primary & Accents -->
+    <color name="netflix_red">#E50914</color>
+    <color name="netflix_red_dark">#B81D24</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#AAAAAA</color>
+    <color name="text_dark">#181818</color>
+
+    <!-- Genre Colors (can be updated later for a more monochrome look) -->
     <array name="genres">
-        <item>#E13300</item>
+        <item>#E50914</item> <!-- Netflix Red -->
         <item>#7358FF</item>
         <item>#1E3264</item>
         <item>#E8115B</item>

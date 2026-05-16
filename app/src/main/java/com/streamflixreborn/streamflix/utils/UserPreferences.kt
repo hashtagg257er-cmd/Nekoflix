@@ -14,6 +14,7 @@ import com.streamflixreborn.streamflix.providers.Provider.Companion.providers
 import com.streamflixreborn.streamflix.providers.TmdbProvider
 import androidx.core.content.edit
 import com.streamflixreborn.streamflix.database.AppDatabase
+import com.streamflixreborn.streamflix.models.Profile
 import org.json.JSONObject
 
 object UserPreferences {
@@ -56,6 +57,24 @@ object UserPreferences {
             providerCache = runCatching { JSONObject(jsonString) }.getOrDefault(JSONObject())
         }
     }
+
+    var currentProfile: Profile?
+        get() {
+            val profileId = Key.CURRENT_PROFILE.getString()
+            val profileName = Key.CURRENT_PROFILE_NAME.getString()
+            val profileAvatar = Key.CURRENT_PROFILE_AVATAR.getString()
+            return if (profileId != null && profileName != null && profileAvatar != null) {
+                Profile(profileId, profileName, profileAvatar)
+            } else {
+                null
+            }
+        }
+        set(value) {
+            AppDatabase.resetInstance()
+            Key.CURRENT_PROFILE.setString(value?.id)
+            Key.CURRENT_PROFILE_NAME.setString(value?.name)
+            Key.CURRENT_PROFILE_AVATAR.setString(value?.avatar)
+        }
 
 
     var currentProvider: Provider?
@@ -437,6 +456,9 @@ object UserPreferences {
         APP_LAYOUT,
         CURRENT_LANGUAGE,
         CURRENT_PROVIDER,
+        CURRENT_PROFILE,
+        CURRENT_PROFILE_NAME,
+        CURRENT_PROFILE_AVATAR,
         PLAYER_RESIZE,
         PLAYER_RESIZE_NAME,
         CAPTION_TEXT_SIZE,

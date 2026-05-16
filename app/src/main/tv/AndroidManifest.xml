@@ -36,7 +36,7 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".activities.main.MainTvActivity"
+            android:name=".ui.profile.ProfileSelectionActivity"
             android:exported="true"
             android:theme="@style/AppTheme.Tv">
             <intent-filter>
@@ -45,6 +45,13 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".activities.main.MainTvActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.Tv">
         </activity>
 
         <provider
