@@ -18,6 +18,7 @@ class Season(
     var number: Int = 0,
     var title: String? = null,
     var poster: String? = null,
+    var banner: String? = null,
 
     var tvShow: TvShow? = null,
     @Ignore
@@ -33,6 +34,7 @@ class Season(
         number: Int = this.number,
         title: String? = this.title,
         poster: String? = this.poster,
+        banner: String? = this.banner,
         tvShow: TvShow? = this.tvShow,
         episodes: List<Episode> = this.episodes,
     ) = Season(
@@ -40,6 +42,7 @@ class Season(
         number,
         title,
         poster,
+        banner,
         tvShow,
         episodes,
     )
@@ -54,6 +57,7 @@ class Season(
         if (number != other.number) return false
         if (title != other.title) return false
         if (poster != other.poster) return false
+        if (banner != other.banner) return false
         if (tvShow != other.tvShow) return false
         if (episodes != other.episodes) return false
         if (!::itemType.isInitialized || !other::itemType.isInitialized) return false
@@ -65,6 +69,7 @@ class Season(
         result = 31 * result + number
         result = 31 * result + (title?.hashCode() ?: 0)
         result = 31 * result + (poster?.hashCode() ?: 0)
+        result = 31 * result + (banner?.hashCode() ?: 0)
         result = 31 * result + (tvShow?.hashCode() ?: 0)
         result = 31 * result + episodes.hashCode()
         result = 31 * result + (if (::itemType.isInitialized) itemType.hashCode() else 0)
