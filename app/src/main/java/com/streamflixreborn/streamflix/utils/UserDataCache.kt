@@ -513,7 +513,7 @@ object UserDataCache {
         tvShowId = tvShow?.id,
         tvShowTitle = tvShow?.title,
         tvShowPoster = tvShow?.poster,
-        tvShowBanner = tvShow?.banner,
+        tvShowBanner = season?.banner,
 
         seasonId = season?.id,
         seasonNumber = season?.number,
