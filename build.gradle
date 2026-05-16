@@ -20,6 +20,12 @@ plugins {
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.23' apply false
 }
 
+allprojects {
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+}
+
 tasks.register('clean', Delete) {
     delete layout.buildDirectory
 }
