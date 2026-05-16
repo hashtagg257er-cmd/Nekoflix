@@ -1,13 +1,13 @@
-<h1 align="center">Streamflix Reborn</h1>
+<h1 align="center">Nekoflix</h1>
 
 <p align="center">
   <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" height="100px" />
   <br />
-  <strong>🔄 Reborn Version</strong> - Community continuation of the original Streamflix project
+  <strong>🐱 Nekoflix Version</strong> - A personalized fork of the original Streamflix project
   <br />
-  An open-source Android TV and mobile app for educational streaming interface, made with Android Studio, in Kotlin
+  An open-source Android TV and mobile app for educational streaming, customized with a new UI and features.
   <br />
-  <a href="https://github.com/streamflix-reborn/streamflix/releases/latest">
+  <a href="https://github.com/hashtagg257er-cmd/Nekoflix/actions">
     <strong>Download app »</strong>
   </a>
   <br />
@@ -21,12 +21,11 @@
   <summary>Table of Contents</summary>
 
 - [About the project](#about-the-project)
-  - [What is Streamflix Reborn?](#-what-is-streamflix-reborn)
-  - [Features](#features)
+  - [What is Nekoflix?](#-what-is-nekoflix)
+  - [New Features in this Version](#new-features-in-this-version)
+  - [Original Features](#original-features)
   - [Built with](#built-with)
 - [Getting started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
 - [Development](#development)
 - [Contributing](#contributing)
 - [Legal Disclaimer](#legal-disclaimer)
@@ -40,27 +39,29 @@
   <img src="./.github/docs/screenshot.png" alt="Streamflix Preview">
 </p>
 
-**Streamflix Reborn** is an independent continuation of the original Streamflix project created by [Lory-Stan TANASI](https://github.com/stantanasi). This reborn version maintains the same educational purpose and functionality while ensuring continued development and support.
+**Nekoflix** is a personalized version of the **Streamflix Reborn** project, which itself is an independent continuation of the original Streamflix project created by [Lory-Stan TANASI](https://github.com/stantanasi).
 
-### 🔄 What is Streamflix Reborn?
+### 🐱 What is Nekoflix?
 
-- **Independent Continuation**: This is an independent continuation of the original Streamflix project
-- **Same Vision**: Maintains the original educational and open-source philosophy
-- **Enhanced Support**: Continued development and bug fixes by an independent developer
-- **Respectful Fork**: Built with full respect for the original creator's work
+- **A Personalized Fork**: This version includes unique UI changes and new features.
+- **Profile Selection**: Adds a user-friendly profile selection screen at startup.
+- **Custom Themes**: Removes the original gradients and implements a sleeker, more modern dark theme.
+- **Educational Purpose**: Maintains the original educational and open-source philosophy.
 
-Streamflix Reborn is an open-source Android TV and mobile app that provides a user interface for accessing publicly available streaming content from various third-party providers.
+Nekoflix is an open-source Android TV and mobile app that provides a user interface for accessing publicly available streaming content from various third-party providers.
 
 This app is designed for educational purposes and personal use only. Users are responsible for ensuring they have proper authorization to access any content they view through this application.
 
-The interface aggregates content from multiple sources and provides a convenient way to browse available streaming options.
+### New Features in this Version
+- **User Profiles**: Added a profile selection screen to provide a more personalized experience.
+- **Revamped UI**: Replaced the default color gradients with a clean and modern dark theme for a more consistent look.
+- **New Icons & Avatars**: Introduced new icons and default avatars for the profile system.
 
-### Features
+### Original Features
 
 - Open-source and ad-free interface
 - Aggregates content from multiple third-party providers
 - No account required for the app interface
-- Educational and personal use only
 - Optimized UI & UX
 - Multiple providers
 - Resume from last playback position
@@ -80,6 +81,8 @@ The interface aggregates content from multiple sources and provides a convenient
 
 ## Getting started
 
+To get a local copy up and running, follow these simple steps.
+
 ### Prerequisites
 
 Install [Android Studio](https://developer.android.com/studio)
@@ -87,26 +90,23 @@ Install [Android Studio](https://developer.android.com/studio)
 ### Setup
 
 1. Clone the project to your local machine
-
 ```bash
-git clone https://github.com/streamflix-reborn/streamflix.git
+git clone https://github.com/hashtagg257er-cmd/Nekoflix.git
 ```
-
 2. Open the project in Android Studio
 
 ## Development
 
 1. Select the device that you want to run the app
-
 2. Click **Run**
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions to the original project are greatly appreciated. To contribute:
 
-1. Fork the project
+1. Fork the original project
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'feat: add some amazing feature'`)
+3. Commit your changes (`git commit -m '''feat: add some amazing feature'''`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a pull request
 
@@ -114,7 +114,7 @@ Contributions are what make the open source community such an amazing place to l
 
 **IMPORTANT: This application is for educational and personal use only.**
 
-- Streamflix does not host, store, or distribute any copyrighted content
+- The app does not host, store, or distribute any copyrighted content
 - All content is sourced from third-party providers and websites
 - Users are solely responsible for ensuring they have legal rights to access any content
 - The developers do not endorse or encourage copyright infringement
@@ -139,7 +139,9 @@ This application is provided "as is" for educational purposes. The developers:
 
 ### Reborn Development
 - **Independent Developer** - Streamflix Reborn maintainer
-- **Special thanks** to the original creator for the excellent foundation
+
+### Nekoflix Customizations
+- **[hashtagg257er-cmd](https://github.com/hashtagg257er-cmd)** - UI/UX and feature modifications
 
 ## License
 
